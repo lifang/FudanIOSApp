@@ -54,6 +54,8 @@
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     [self.window makeKeyAndVisible];
     if ([launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey]) {
+        [UIApplication sharedApplication].applicationIconBadgeNumber = 1;
+        [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
         _launchFromPushDict = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
     }
     
@@ -136,6 +138,8 @@
 
 //收到通知弹出到通知界面
 - (void)showNotificationViewWithInfo:(NSDictionary *)userInfo {
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:1];
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     NSString *messageID = nil;
     if ([userInfo objectForKey:@"id"] && ![[userInfo objectForKey:@"id"] isKindOfClass:[NSNull class]]) {
         messageID = [NSString stringWithFormat:@"%@",[userInfo objectForKey:@"id"]];

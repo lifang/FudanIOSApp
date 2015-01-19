@@ -40,6 +40,9 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    if (_usernameField.text && ![_usernameField.text isEqualToString:@""]) {
+        return;
+    }
     UserModel *user = [UserArchiverHelper getLastestUser];
     if (user) {
         _usernameField.text = user.username;

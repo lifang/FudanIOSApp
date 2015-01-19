@@ -39,9 +39,9 @@ static NSInteger joinTag  = 101;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    if (_eventData) {
-        self.title = _eventData.eventName;
-    }
+//    if (_eventData) {
+//        self.title = _eventData.eventName;
+//    }
     [self initAndLayoutUI];
     [self downloadDetail];
 }
@@ -296,7 +296,8 @@ static NSInteger joinTag  = 101;
         imageView.tag = i + 1;
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapImageView:)];
         [imageView addGestureRecognizer:tap];
-        [imageView sd_setImageWithURL:[_detailData.eventImageList objectAtIndex:i]];
+        NSString *urlString = [NSString stringWithFormat:@"%@/%@",kImageURL,[_detailData.eventImageList objectAtIndex:i]];
+        [imageView sd_setImageWithURL:[NSURL URLWithString:urlString]];
         [self.topImageScrollView addSubview:imageView];
         rect.origin.x += self.topImageScrollView.bounds.size.width;
     }
@@ -323,7 +324,7 @@ static NSInteger joinTag  = 101;
     NSString *startTime = [TimeFormat timeFromString:_detailData.eventStartTime];
     NSString *endTime = [TimeFormat timeFromString:_detailData.eventFinishTime];
     _durationLabel.text = [NSString stringWithFormat:@"%@.-%@",startTime,endTime];
-    self.title = _detailData.eventName;
+//    self.title = _detailData.eventName;
     BOOL canJoined = [TimeFormat isCurrentTimeBeforeTime:_detailData.eventFinishTime];
     
     AppDelegate *delegate = [AppDelegate shareAppDelegate];

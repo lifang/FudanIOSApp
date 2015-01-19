@@ -44,7 +44,7 @@
     _tableView.dataSource = self;
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 15.f)];
     headerView.backgroundColor = [UIColor clearColor];
-    _tableView.tableHeaderView = headerView;
+    _tableView.tableHeaderView = headerView; 
     [self.view addSubview:_tableView];
     if (kDeviceVersion < 7.0) {
         UIView *footerView = [[UIView alloc] init];

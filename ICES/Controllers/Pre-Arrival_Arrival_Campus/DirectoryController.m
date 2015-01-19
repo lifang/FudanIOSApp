@@ -155,7 +155,8 @@
     cell.textLabel.text = [(TreeDirectory *)item directoryName];
     cell.textLabel.textColor = kColor(3, 39, 65, 1);
     cell.textLabel.backgroundColor = [UIColor clearColor];
-    if ([treeNodeInfo.childrenTreeNodes count] > 0) {
+    //只有一篇文章直接跳转
+    if ([treeNodeInfo.childrenTreeNodes count] > 1) {
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 16, 10)];
         imageView.image = [UIImage imageNamed:@"arrow.png"];
         cell.accessoryView = imageView;
@@ -183,10 +184,18 @@
     animation.removedOnCompletion = NO;
     animation.fillMode = kCAFillModeForwards;
     [cell.accessoryView.layer addAnimation:animation forKey:@"transform"];
-    if ([treeNodeInfo.children count] == 0) {
+    if ([treeNodeInfo.children count] == 0 && treeNodeInfo.treeDepthLevel != 0) {
         DirectoryDeatilController *detailC = [[DirectoryDeatilController alloc] init];
         detailC.directoryID = [(TreeDirectory *)item directoryID];
         detailC.directoryTitle = [(TreeDirectory *)item directoryName];
+        [self.navigationController pushViewController:detailC animated:YES];
+    }
+    //目录只有一篇文章直接跳转详情
+    if ([treeNodeInfo.children count] == 1 && treeNodeInfo.treeDepthLevel == 0) {
+        TreeNodeInfo *first = [treeNodeInfo.children objectAtIndex:0];
+        DirectoryDeatilController *detailC = [[DirectoryDeatilController alloc] init];
+        detailC.directoryID = [(TreeDirectory *)first.item directoryID];
+        detailC.directoryTitle = [(TreeDirectory *)first.item directoryName];
         [self.navigationController pushViewController:detailC animated:YES];
     }
 }

@@ -204,7 +204,7 @@
     cell.titleLabel.text = aroundData.aroundName;
     cell.typeView.image = [UIImage imageNamed:[NSString stringWithFormat:@"around_small_%d.png",aroundData.aroundType]];
     cell.summaryLabel.text = aroundData.aroundSummary;
-    NSURL *imageURL = [NSURL URLWithString:aroundData.aroundSmallImage];
+    NSURL *imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",kImageURL,aroundData.aroundSmallImage]];
     [cell.pictureView sd_setImageWithURL:imageURL placeholderImage:nil];
     return cell;
 }

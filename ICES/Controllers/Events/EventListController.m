@@ -201,7 +201,7 @@
     }
     cell.contentView.backgroundColor = kColor(244, 244, 244, 1);
     EventModel *eventData = [self.dataItem objectAtIndex:indexPath.row];
-    NSURL *imageURL = [NSURL URLWithString:eventData.eventSmallImage];
+    NSURL *imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",kImageURL,eventData.eventSmallImage]];
     [cell.pictureView sd_setImageWithURL:imageURL placeholderImage:nil];
     cell.titleLabel.text = eventData.eventName;
     cell.summaryLabel.text = eventData.eventSummary;

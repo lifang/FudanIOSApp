@@ -21,6 +21,8 @@
 
 #define kServiceURL @"http://192.168.0.250:8080/icesapp/api"
 
+#define kImageURL @"http://192.168.0.250:8080/icesapp"
+
 #define kPromptInfo @"Prompting Information"  //警告框提示
 
 #define kAppID @""  //appID

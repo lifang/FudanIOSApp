@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>70F22233-706A-4EC0-81D2-61B9AA779EBC</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ICES</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2253FA47043E6410CC9C8957CA0FCD8F28B019E0</key>
+		<string>github.com:lifang/FudanIOSApp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ICES.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2253FA47043E6410CC9C8957CA0FCD8F28B019E0</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:lifang/FudanIOSApp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2253FA47043E6410CC9C8957CA0FCD8F28B019E0</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2253FA47043E6410CC9C8957CA0FCD8F28B019E0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ICES</string>
+		</dict>
+	</array>
+</dict>
+</plist>

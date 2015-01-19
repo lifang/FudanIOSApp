@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = _directoryTitle;
+//    self.title = _directoryTitle;
     _imageURLs = [[NSMutableArray alloc] init];
     [self initAndLayoutUI];
     [self downloadDetail];
@@ -141,7 +141,8 @@
             imageView.tag = i + 1;
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapImageView:)];
             [imageView addGestureRecognizer:tap];
-            [imageView sd_setImageWithURL:[_imageURLs objectAtIndex:i]];
+            NSString *urlString = [NSString stringWithFormat:@"%@/%@",kImageURL,[_imageURLs objectAtIndex:i]];
+            [imageView sd_setImageWithURL:[NSURL URLWithString:urlString]];
             [self.topImageScrollView addSubview:imageView];
             rect.origin.x += self.topImageScrollView.bounds.size.width;
         }

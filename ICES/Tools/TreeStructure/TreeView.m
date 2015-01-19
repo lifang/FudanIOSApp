@@ -146,6 +146,15 @@
     if ([[treeNode treeNodeInfo].children count] == 0) {
         return;
     }
+//*************************************
+    /*
+     临时需求 破坏树结构 不需要可删除星号之间内容
+     目录只有一篇文章时 不展开 直接跳详情
+     */
+    if ([[treeNode treeNodeInfo].children count] == 1 && [[treeNode treeNodeInfo] treeDepthLevel] == 0) {
+        return;
+    }
+//************************************
     if (treeNode.expanded) {
         [self collapseCellForTreeNode:treeNode];
     }

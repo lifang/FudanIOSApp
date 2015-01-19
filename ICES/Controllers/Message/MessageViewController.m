@@ -333,7 +333,7 @@
             cell = [[MessageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:messageCellIdentifier_text withCellStyle:MessageCellText];
         }
     }
-    NSURL *imageURL = [NSURL URLWithString:messageData.messageImagePath];
+    NSURL *imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",kImageURL,messageData.messageImagePath]];
     [cell.pictureView sd_setImageWithURL:imageURL];
     cell.titleLabel.text = messageData.messageTitle;
     cell.summaryLabel.text = messageData.messageSummary;
